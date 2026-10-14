@@ -26,7 +26,7 @@ Version SSOT: `Cargo.toml` `version` and `src/identity.rs` `VERSION`.
 
 ## [1.0.5] - 2026-10-04
 
-Historical VideoJoin release. Kept so the earlier about-page change stays visible.
+Historical HolaTui release. Kept so the earlier about-page change stays visible.
 
 ### Changed
 
@@ -35,12 +35,12 @@ Historical VideoJoin release. Kept so the earlier about-page change stays visibl
 
 ## [1.0.4] - 2026-10-04
 
-Historical VideoJoin release. The text menu, thirteen languages, and system-log board started here. Row 1 on that release was join.
+Historical HolaTui release. The text menu, thirteen languages, and system-log board started here. Row 1 on that release was join.
 
 ## [1.0.3] - 2026-08-09
 
-Historical VideoJoin release. Stream-copy concat with a re-encode fallback, published with `shutil.move`.
+Historical HolaTui release. Stream-copy concat with a re-encode fallback, published with `shutil.move`.
 
 ## [1.0.2] - prior
 
-Historical VideoJoin release. Interactive two-file join with console script `video-join`.
+Historical HolaTui release. Interactive two-file join with console script `hola-tui`.

@@ -46,7 +46,7 @@ This file is the repository layout for HolaTui. Module jobs stay on `requirement
 
 **Future AI assistants or maintainers MUST NOT:**
 
-- Put the ship unit back under `src/HelloTui/` or `src/VideoJoin/`.
+- Put the ship unit back under `src/HelloTui/` or `src/HolaTui/`.
 - Delete `screenshots/` as part of the rename.
 - Write product URLs into `docs/templates/` or `docs/skills/`.
 
