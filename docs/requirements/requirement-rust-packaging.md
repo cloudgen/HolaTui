@@ -21,7 +21,7 @@ This file owns the crate identity and how a person builds and installs HolaTui. 
 5. **Dependencies.** Direct dependencies **MUST** be `crossterm` and `unicode-width`. There **MUST NOT** be a Python package, a `pyproject.toml`, or a pip dependency.
 6. **Install.** From this tree the install command is `cargo install --path .`. When the crate is on the registry the install command is `cargo install holatui`. Neither command uses sudo.
 7. **Homepage.** The forge URL **MUST** be `https://github.com/cloudgen/HolaTui`. That is the repository the user named.
-8. **Maintainer build.** `./build.sh` **MUST** offer `version`, `build`, `test`, and `clean`. `version` prints `1.0.0` from `Cargo.toml`. `build` runs `cargo build --release`. `test` runs `cargo test --offline -- --test-threads=1`. `clean` runs `cargo clean`. `./build.sh` **MUST NOT** upload to a package index and **MUST NOT** push git.
+8. **No wrapper script.** `build.sh` **MUST** be absent. Build with `cargo build --release`. Test with `cargo test --offline -- --test-threads=1`. Clean with `cargo clean`. Those commands **MUST NOT** upload to a package index and **MUST NOT** push git.
 9. Actor / role / subject / approver: **considered**. No dest machine. No approver.
 10. Dest fence conditions: **considered — none**.
 
@@ -32,14 +32,13 @@ This file owns the crate identity and how a person builds and installs HolaTui. 
 | **Manifest** | `Cargo.toml` |
 | **Lockfile** | `Cargo.lock` |
 | **Identity** | `src/identity.rs` |
-| **Build helper** | `build.sh` |
 
 ## 3. Design Principles (CIAO / CIAO-Lite)
 
 - **Caution:** Two version strings that disagree are a defect.
 - **Intentional:** The crate name and the console name are different and both are fixed here.
 - **Anti-fragile:** A checkout installs with `cargo install --path .` without a registry.
-- **Over-protect:** The maintainer script does not push.
+- **Over-protect:** Cargo is the only build entry. This package does not push.
 
 ## 4. Protection Rule (Sacred)
 
@@ -48,7 +47,7 @@ This file owns the crate identity and how a person builds and installs HolaTui. 
 - Rename the crate to `HelloTui` or the binary to `hello-tui`.
 - Add a pip or setuptools manifest.
 - Point the homepage at a repository the user did not name.
-- Make `./build.sh` upload or `git push`.
+- Add a wrapper that uploads or runs `git push`.
 
 ## 5. Acceptance criteria
 
@@ -56,5 +55,5 @@ This file owns the crate identity and how a person builds and installs HolaTui. 
 |----|-----------|
 | AC-1 | `Cargo.toml` name, version, edition, license, and binary match rules 1 and 2 |
 | AC-2 | `src/identity.rs` `VERSION` equals the manifest version |
-| AC-3 | `./build.sh version` prints `1.0.0` |
+| AC-3 | `build.sh` is absent |
 | AC-4 | No `pyproject.toml` remains |

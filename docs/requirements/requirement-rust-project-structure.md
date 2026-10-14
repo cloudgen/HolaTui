@@ -18,7 +18,7 @@ This file is the repository layout for HolaTui. Module jobs stay on `requirement
 2. **Proof.** `tests/contract.rs` **MUST** be the automated contract suite for hello, the menu numbers, language save, cargo argv, and the about identity lines.
 3. **Law.** `docs/requirements/index.md` **MUST** list every live `requirement-*.md`. Product law **MUST NOT** live under `docs/templates/`.
 4. **User docs.** Root `README.md`, `CHANGELOG.md`, `SECURITY.md`, and `LICENSE.md` **MUST** name HolaTui. They **MUST NOT** tell the reader to `pip install` this product.
-5. **Retired Python tree.** After the Rust tests pass, `src/HelloTui/`, `pyproject.toml`, and `tests/test_*.py` **MUST** be absent. Older join pictures under `screenshots/` and files under `sample-videos/` **MAY** remain. The README menu pictures **MUST** be captures of the HolaTui boards, and row 1 on those pictures **MUST** be hello. The README **MUST NOT** present the join pictures as the live menu.
+5. **Retired Python tree.** After the Rust tests pass, `src/HelloTui/`, `pyproject.toml`, `tests/test_*.py`, `build.sh`, and `sample-videos/` **MUST** be absent. Older join pictures under `screenshots/` **MAY** remain. The README menu pictures **MUST** be captures of the HolaTui boards, and row 1 on those pictures **MUST** be hello. The README **MUST NOT** present the join pictures as the live menu.
 6. **Build output.** `target/` **MUST** be gitignored. It is not source.
 7. **Harness docs.** `docs/skills/`, `docs/templates/`, `docs/terminologies/`, `docs/policies/`, and `docs/human-intro/` are portable harness knowledge. This product rename **MUST NOT** rewrite them to insert HolaTui facts.
 8. Actor / role / subject / approver: **considered**. No dest machine. No approver.
@@ -32,8 +32,6 @@ This file is the repository layout for HolaTui. Module jobs stay on `requirement
 | `tests/contract.rs` | Contract proof |
 | `docs/requirements/` | Specialized law |
 | `screenshots/` | Live menu captures, plus older join pictures |
-| `sample-videos/` | Historical media fixtures, unused by `hello` |
-| `build.sh` | Maintainer cargo wrapper |
 
 ## 3. Design Principles (CIAO / CIAO-Lite)
 

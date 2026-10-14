@@ -14,8 +14,7 @@ Contract proof for the Rust ship unit.
 ## Rules
 
 1. Contract cases do not call the network.
-2. `./build.sh test` is the maintainer wrapper for the same cargo command.
-3. Pictures in `screenshots/` are not fixtures for this suite.
+2. Pictures in `screenshots/` are not fixtures for this suite.
 
 ## Run
 

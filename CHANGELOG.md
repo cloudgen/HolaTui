@@ -3,6 +3,13 @@
 All notable changes to **HolaTui** are documented here.
 Version SSOT: `Cargo.toml` `version` and `src/identity.rs` `VERSION`.
 
+## [Unreleased]
+
+### Removed
+
+- Maintainer wrapper `build.sh`. Build, test, and clean use `cargo`.
+- Historical clips under `sample-videos/`.
+
 ## [1.0.0] - 2026-10-12
 
 ### Changed
