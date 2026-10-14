@@ -1,26 +1,25 @@
 # Requirements
 
-Authoritative specialized product law for **VideoJoin** lives here.
+Authoritative specialized product law for **HolaTui** lives here.
 
-**Current state (2026-10-04):** Specialized **software-development** product. Left genesis. Registry is populated — see `index.md`. Fifteen Active requirements. Product version is **1.0.5**.
+**Current state (2026-10-12):** Specialized **software-development** product. Left genesis. Registry is populated — see `index.md`. Fourteen Active requirements. One Retired requirement. Product version is **1.0.0**.
 
 ## Product identity (summary)
 
 | Field | Value |
 |-------|--------|
-| Product / package | `VideoJoin` |
-| Version SSOT | **`1.0.5`** (`pyproject.toml` + `src/VideoJoin/__init__.py`) |
-| Product README SSOT | Root `README.md` (app-name, short description, target version **1.0.5**). Sections and pictures: `requirement-python-readme` |
-| Ship surface | Python package; console script **`video-join`**; module `python -m VideoJoin` |
-| Install mode | **pip / local package** (`pip install VideoJoin`; this tree **1.0.5**; checkout `pip install -e .`) — not shell Type O |
-| Domain surface | `requirement-domain-videojoin` — four pillars (`join`, `list-videos`, help, about) |
-| Text menu | `requirement-python-tui` — front rows join, system-log, language, self-management, Exit. Default path word is `Path` |
-| Menu language | `requirement-python-cli-language` — row 4, thirteen codes, leaf `~/.local/VideoJoin/language`. `language` is not an argv verb |
-| Status logger | `requirement-python-cli-logging` — `ChronicleLogger(...)` inside `def main`. Required |
-| Class map | `requirement-python-oop` — allowed end state. Running tree is still three modules |
-| Encode ops | `requirement-video-ffmpeg-pipeline` — stream-copy then re-encode; unique temps; **`shutil.move`** publish |
-| Coding style | `requirement-python-coding-style` — temps + `shutil.move`; gate **`CL-PYTHON-SHUTIL-MOVE-PUBLISH`** |
-| Runtime tools | **FFmpeg** on PATH for a join. **ChronicleLogger>=1.3.1** required. Live `pyproject.toml` declares that floor |
+| Product | `HolaTui` |
+| Crate | `holatui` |
+| Version SSOT | **`1.0.0`** (`Cargo.toml` + `src/identity.rs` `VERSION`) |
+| Product README SSOT | Root `README.md` |
+| Ship surface | Rust crate; binary **`hola-tui`** |
+| Install mode | **cargo** (`cargo install --path .` from this tree; `cargo install holatui` when the crate is published) — not a shell installer |
+| Domain surface | `requirement-domain-holatui` — welcome line (`hello`), help, about |
+| Text menu | `requirement-rust-tui` — front rows hello, system-log, language, self-management, Exit. Default path word is `Path` |
+| Menu language | `requirement-rust-cli-language` — row 7, thirteen codes, leaf `~/.local/HolaTui/language`. `language` is not an argv verb |
+| Status logger | `requirement-rust-cli-logging` — `StatusLog::new` inside `main` before dispatch |
+| Modules | `requirement-rust-modules` |
+| Runtime tools | **rustc** and **cargo** to build. No external media tool |
 
 ## Class requirement gate
 
@@ -31,9 +30,9 @@ Authoritative specialized product law for **VideoJoin** lives here.
 
 ## Purpose
 
-- **Plan** designs work by reading and updating these docs.  
-- **Implement** delivers code that **traces** to these requirements.  
-- **Review** verifies delivery against requirements and CIAO checklists.  
+- **Plan** designs work by reading and updating these docs.
+- **Implement** delivers code that **traces** to these requirements.
+- **Review** verifies delivery against requirements and CIAO checklists.
 - Product **README** must stay honest with this law (install, features, version).
 
 ## Layout
@@ -49,10 +48,10 @@ Typical: `draft` · `Active` · `approved` · `in-progress` · `done` · `deprec
 
 ## Rules
 
-1. Never invent paths — verify on disk.  
-2. Class files only via class process; non-class via create-specific process.  
-3. Never dump harness inventories into this versioned surface.  
-4. Online shell install and Type 1 elevation stay **absent** unless product mode is explicitly changed.  
-5. Sole domain SSOT: `requirement-domain-videojoin.md`.  
-6. When changing join/publish behavior: update pipeline + coding-style REQs **and** root `README.md` in the same change.  
-7. Version dual SSOT + README Version badge must match when a release is claimed.
+1. Never invent paths — verify on disk.
+2. Class files only via class process; non-class via create-specific process.
+3. Never dump harness inventories into this versioned surface.
+4. Online shell install and Type 1 elevation stay **absent** unless product mode is explicitly changed.
+5. Sole domain SSOT: `requirement-domain-holatui.md`.
+6. When changing the welcome line or the menu rows: update the domain and TUI requirements **and** root `README.md` in the same change.
+7. Version SSOT in `Cargo.toml` and `src/identity.rs` and the README Version badge must match when a release is claimed.

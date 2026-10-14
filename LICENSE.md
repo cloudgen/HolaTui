@@ -1,4 +1,6 @@
-# MIT License
+# HolaTui
+
+MIT License
 
 Copyright (c) 2026 Wilgat Wong <wilgat.wong@gmail.com>
 

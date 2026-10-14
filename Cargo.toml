@@ -1,0 +1,19 @@
+[package]
+name = "holatui"
+version = "1.0.0"
+edition = "2021"
+description = "HolaTui prints a welcome message from the command line or from menu row 1."
+license = "MIT"
+authors = ["Wilgat Wong <wilgat.wong@gmail.com>"]
+homepage = "https://github.com/cloudgen/HolaTui"
+repository = "https://github.com/cloudgen/HolaTui"
+readme = "README.md"
+keywords = ["cli", "tui"]
+
+[[bin]]
+name = "hola-tui"
+path = "src/main.rs"
+
+[dependencies]
+crossterm = "0.28"
+unicode-width = "0.2"

@@ -4,7 +4,7 @@
 
 | Version | Supported |
 |---------|-----------|
-| 1.0.5 (current) | Yes |
+| 1.0.0 (current) | Yes |
 | Older releases | Best-effort; prefer upgrading to current |
 
 ## Reporting a Vulnerability
@@ -24,10 +24,10 @@ This project follows **[CIAO](https://github.com/cloudgen/ciao)** / **CIAO-Lite*
 
 | Letter | Principle | Security application |
 |--------|-----------|----------------------|
-| **C** | **Caution** | Assume missing tools and hostile/unexpected media inputs. Fail closed when FFmpeg is missing or both join paths fail. Do not claim success on failed encode. |
-| **I** | **Intentional** | FFmpeg is invoked with argument lists (not shell-interpolated free-form filter graphs from untrusted remote input). Publish of intermediates uses `shutil.move`. Source media is never the final output path. |
-| **A** | **Anti-fragile** | Multi-mount publish (USB vs system temp) is designed via staging + `shutil.move`. Unique temps avoid fixed cwd race names. |
-| **O** | **Over-protect** | Protection Zones on staging/publish helpers; least privilege day-to-day (user-level CLI; no root elevation product surface). |
+| **C** | **Caution** | Fail closed on an unknown verb and on a cargo failure. A bare `self-uninstall` does not run cargo. |
+| **I** | **Intentional** | The welcome line is the same sentence on the terminal and on menu row 1. The closed verb list is help, version, about, hello, and the four cargo lifecycle verbs. |
+| **A** | **Anti-fragile** | Empty argv with no terminal prints help and returns 0. The about page reports cache paths and does not create them. |
+| **O** | **Over-protect** | Day-to-day use is a user-level binary. Lifecycle rows call `cargo` and do not use root. The about page download URL stays empty, so the page does not show a `curl` install line. |
 
 Full principles: [CIAO Defensive Programming](https://github.com/cloudgen/ciao) · agent contract: [CIAO-Lite](https://github.com/cloudgen/ciao-lite).
 
@@ -35,6 +35,6 @@ This section describes **design posture**. It is **not** a claim of third-party 
 
 ## Scope notes
 
-- VideoJoin is a **local** interactive CLI. It does **not** implement online install channels or companion `.sha256` download integrity.
-- Prefer keeping untrusted media and scripts offline unless you trust their origin.
+- HolaTui is a **local** interactive CLI. It does **not** implement a shell installer or companion `.sha256` download integrity.
+- Lifecycle verbs call `cargo` for the crate name `holatui`. They do not use `sudo`.
 - Related product docs: [`README.md`](./README.md), [`LICENSE.md`](./LICENSE.md).

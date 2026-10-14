@@ -1,44 +1,24 @@
-# Tests — VideoJoin
+# Tests — HolaTui
 
-Executable proof for product law. **Design map:** `docs/reviews/test-plan.md`.  
-**RTM:** `docs/reviews/requirement-test-matrix.md`.
+Contract proof for the Rust ship unit.
 
-## Status (2026-10-04, product 1.0.5)
+## Status (2026-10-12, product 1.0.0)
 
 | Item | State |
 |------|--------|
-| Design TP map | **present** under `docs/reviews/test-plan.md` |
-| Automated suites | `tests/test_about.py` covers **TP-ABOUT-01** through **TP-ABOUT-14** and **TP-ABOUT-16** (have). There is no **TP-ABOUT-15**. `tests/test_tui.py` covers **TP-TUI-09** and **TP-TUI-10** (have). `tests/test_language.py` covers **TP-LANG-01** (have). `tests/test_docs.py` covers **TP-DOC-01** (have). **TP-DOC-03** stays `todo`. **TP-LOG-*** and **TP-OOP-*** stay `todo` |
-| Runner | `tests/run.sh` (`python3 -m unittest discover`) |
-| Last run | 2026-10-04 `./tests/run.sh` — 23 tests, OK |
-
-## Planned layout
-
-| File | TP families |
-|------|-------------|
-| `test_about.py` | TP-ABOUT-01..14 and TP-ABOUT-16 (have). No TP-ABOUT-15 |
-| `test_tui.py` | TP-TUI-09 and TP-TUI-10 (have). TP-TUI-01..08 still todo |
-| `test_language.py` | TP-LANG-01 (have) |
-| `test_docs.py` | TP-DOC-01 (have). TP-DOC-03 stays todo |
-| `test_structure.py` | TP-STRUCT |
-| `test_packaging.py` | TP-PKG |
-| `test_prerequisites.py` | TP-PRE |
-| `test_cli.py` | TP-CLI |
-| `test_domain_join.py` | TP-VIDEOJOIN |
-| `test_ffmpeg_pipeline.py` | TP-FFMPEG |
-| `test_errors.py` | TP-ERR |
-| `test_fs_publish.py` | TP-FS |
+| Suite | `tests/contract.rs` |
+| Covers | `hello` output, text-screen gate, unknown `join` / `list-videos`, help text, front row numbers, system-log rows, language 71–83 save, cargo argv, bare uninstall, about identity lines, version match, logger name |
+| Runner | `cargo test --offline -- --test-threads=1` |
+| Threads | The suite changes process environment and the working directory. Run it with `--test-threads=1`. |
 
 ## Rules
 
-1. Assert messages / test names **MUST** include the **TP-ID**.  
-2. Run media cases only with **generated fixtures** in temp dirs — never user media.  
-3. Core cases **MUST NOT** require public network.  
-4. Flip `todo` → `have` in `docs/reviews/test-plan.md` and requirement DTV only after green runs.  
-5. Do not place executable tests under `docs/templates/`.
+1. Contract cases do not call the network.
+2. `./build.sh test` is the maintainer wrapper for the same cargo command.
+3. Pictures in `screenshots/` are not fixtures for this suite.
 
-## Run (when suites exist)
+## Run
 
 ```bash
-./tests/run.sh
+cargo test --offline -- --test-threads=1
 ```
